@@ -169,10 +169,10 @@ export const Component = () => {
 
           <div className="max-w-4xl lg:-translate-y-8 pr-12">
             <h1 className="text-[clamp(3.5rem,9.5vw,11.5rem)] font-black leading-[0.87] tracking-tighter text-white uppercase italic-none">
-              DATA SCIENCE <br /> <span className="text-outline">& SOFTWARE</span>
+              HI! I AM <br /> <span className="text-outline">JITISH</span>
             </h1>
             <p className="mt-8 font-mono text-[11px] text-white/40 uppercase tracking-[0.35em] max-w-sm leading-relaxed">
-              Engineering intelligent systems and immersive digital experiences through spatial logic and machine learning.
+              Engineering intelligent systems and immersive digital experiences through robust software engineering principles and machine learning.
             </p>
           </div>
 
@@ -186,14 +186,20 @@ export const Component = () => {
               <span className="font-mono text-[10px] font-bold text-white uppercase tracking-[0.2em]">Projects</span>
             </Link>
 
-            <button ref={skillsRef} className="w-fit flex items-center gap-4 group">
+            <a
+              ref={skillsRef as any}
+              href="https://github.com/jitishp04/CV/blob/main/CV%20-%20Google%20Docs.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-fit flex items-center gap-4 group"
+            >
               <div className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-white transition-all duration-500 overflow-hidden">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:stroke-black stroke-white transition-colors duration-500">
                   <path d="M7 17L17 7M17 7H8M17 7V16" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <span className="font-mono text-[10px] font-bold text-white uppercase tracking-[0.2em]">Skills</span>
-            </button>
+              <span className="font-mono text-[10px] font-bold text-white uppercase tracking-[0.2em]">CV</span>
+            </a>
 
             <button ref={expRef} className="w-fit flex items-center gap-4 group">
               <div className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-white transition-all duration-500 overflow-hidden">
@@ -206,7 +212,7 @@ export const Component = () => {
           </div>
         </div>
 
-        <div className="w-full md:w-96 lg:w-[420px] flex-shrink-0 flex flex-col justify-center z-20">
+        <div className="w-full md:w-106 lg:w-[500px] flex-shrink-0 flex flex-col justify-center z-20">
           <div className="command-cell glass-panel p-8 sm:p-10 block">
             {/* Header */}
             <span className="font-mono text-[9px] text-white/25 uppercase tracking-widest block mb-6">001 // ABOUT ME</span>
@@ -219,8 +225,8 @@ export const Component = () => {
                 </svg>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white tracking-tight">Jitish Padhya</h3>
-                <span className="font-mono text-[10px] text-white/30 uppercase tracking-widest">Data Science &amp; Software Engineering</span>
+                <h3 className="text-lg font-bold text-white tracking-tight">JITISH RAJANKUMAR PADHYA</h3>
+                <span className="font-mono text-[10px] text-white/30 uppercase tracking-widest"> Core field: Data Science &amp; Software engineering</span>
               </div>
             </div>
 
@@ -238,7 +244,7 @@ export const Component = () => {
 
             {/* Bio */}
             <p className="text-sm text-white/50 leading-relaxed mb-6">
-              Data Science student and Software Engineering graduate combining strong mathematical foundations with practical experience in generative AI tools and ML pipelines.
+              Data Science student and Software Engineering graduate combining strong mathematical foundations with practical experience in generative and agentic AI and ML pipelines.
             </p>
             <p className="text-sm text-white/50 leading-relaxed mb-8">
               Passionate about <span className="italic text-white/70">financial markets</span> and applying engineering solutions to complex data problems. Proven track record of driving innovation in agile environments, including developing proprietary LLM tools at Ericsson.
@@ -248,31 +254,40 @@ export const Component = () => {
             <div className="flex gap-6 mb-8">
               <div>
                 <span className="text-2xl font-bold text-white tracking-tighter">MSc</span>
-                <span className="block font-mono text-[9px] text-white/25 uppercase tracking-widest mt-1">Data Science</span>
+                <span className="block font-mono text-[9px] text-white/25 uppercase tracking-widest mt-1">Data Science, Statistics, Decision Analysis</span>
               </div>
               <div className="w-[1px] bg-white/5" />
               <div>
                 <span className="text-2xl font-bold text-white tracking-tighter">BSc</span>
-                <span className="block font-mono text-[9px] text-white/25 uppercase tracking-widest mt-1">Software Eng</span>
+                <span className="block font-mono text-[9px] text-white/25 uppercase tracking-widest mt-1">Software Engineering and Management</span>
               </div>
               <div className="w-[1px] bg-white/5" />
               <div>
                 <span className="text-2xl font-bold text-white tracking-tighter">2</span>
                 <span className="block font-mono text-[9px] text-white/25 uppercase tracking-widest mt-1">Internships</span>
               </div>
+              <div className="w-[1px] bg-white/5" />
+              <div>
+                <span className="text-2xl font-bold text-white tracking-tighter">15+</span>
+                <span className="block font-mono text-[9px] text-white/25 uppercase tracking-widest mt-1">Projects</span>
+              </div>
             </div>
 
             {/* Divider */}
             <div className="h-[1px] w-full bg-white/5 mb-6" />
 
-            {/* Skill tags */}
-            <div className="flex flex-wrap gap-2">
-              {["Python", "TypeScript", "React", "PyTorch", "Docker", "GCP", "FastAPI", "SQL"].map((skill) => (
-                <span key={skill} className="text-[9px] font-mono px-3 py-1.5 rounded-full border border-white/10 text-white/40 uppercase tracking-widest">
-                  {skill}
-                </span>
-              ))}
-            </div>
+            {/* CV Button */}
+            <a
+              href="https://github.com/jitishp04/CV/blob/main/CV%20-%20Google%20Docs.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center gap-4 group py-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white transition-all duration-500"
+            >
+              <span className="font-mono text-[10px] font-bold text-white group-hover:text-black uppercase tracking-[0.2em]">View Full CV</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:stroke-black stroke-white transition-colors duration-500">
+                <path d="M7 17L17 7M17 7H8M17 7V16" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
