@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import ScrollIndicator from "@/components/ui/scroll-indicator";
 
 interface CardData {
     title: string;
@@ -285,6 +286,8 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                     );
                 })}
             </div>
+
+            <ScrollIndicator />
         </div>
     );
 };

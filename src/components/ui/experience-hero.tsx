@@ -203,9 +203,11 @@ export const Component = () => {
             {/* Avatar + Name */}
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 rounded-full border border-white/15 bg-white/[0.03] flex items-center justify-center overflow-hidden">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="stroke-white/40">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <img
+                  src="/profile.jpeg"
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white tracking-tight">JITISH RAJANKUMAR PADHYA</h3>

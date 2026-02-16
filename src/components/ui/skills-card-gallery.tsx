@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import ScrollIndicator from "@/components/ui/scroll-indicator";
 
 interface SkillCardData {
     title: string;
@@ -263,6 +264,8 @@ const SkillsCardGallery: React.FC<SkillsCardGalleryProps> = ({
                     );
                 })}
             </div>
+
+            <ScrollIndicator />
         </div>
     );
 };

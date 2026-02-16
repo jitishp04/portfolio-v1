@@ -6,72 +6,86 @@ import Lenis from "lenis";
 
 const cardData = [
     {
-        title: "Immersive Virtual Reality",
+        title: "CyberSafe AI",
         description:
-            "Explore how VR is transforming the way we interact with digital environments.",
+            "An AI-powered cybersecurity solution for threat detection and prevention.",
         fullDescription:
-            "Virtual Reality technology is revolutionizing industries from gaming to healthcare. By creating fully immersive digital environments, VR enables users to experience scenarios that would otherwise be impossible, dangerous, or prohibitively expensive in the real world.",
-        image:
-            "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        category: "Technology",
-        tags: ["Virtual Reality", "Technology", "Innovation", "Digital Experience"],
+            "CyberSafe AI leverages machine learning and artificial intelligence to identify, analyse, and mitigate cybersecurity threats in real time. The system provides proactive defence mechanisms across digital infrastructure.",
+        image: "/cyberSafeAi.png",
+        category: "AI / Security",
+        tags: ["AI", "Cybersecurity", "Machine Learning", "Threat Detection"],
     },
     {
-        title: "Quantum Computing Breakthroughs",
+        title: "Autonomous Vehicle",
         description:
-            "Recent advances in quantum computing are promising to solve previously impossible problems.",
+            "Self-driving vehicle system built on embedded platforms and computer vision.",
         fullDescription:
-            "Quantum computers leverage the strange properties of quantum mechanics to process information in ways that classical computers cannot. Recent breakthroughs have brought us closer to quantum supremacy.",
-        image:
-            "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        category: "Science",
-        tags: ["Quantum", "Computing", "Research", "Future Tech"],
+            "An autonomous driving project utilising computer vision, sensor fusion, and embedded systems to enable real-time navigation and obstacle avoidance for self-driving vehicles.",
+        image: "/car.png",
+        category: "Embedded / AI",
+        tags: ["Autonomous Driving", "Computer Vision", "OpenDLV", "Embedded Systems"],
     },
     {
-        title: "Sustainable Architecture",
+        title: "Dentigo",
         description:
-            "How eco-friendly building designs are shaping our urban landscapes.",
+            "A digital health application streamlining dental clinic workflows.",
         fullDescription:
-            "Sustainable architecture focuses on creating buildings that minimize environmental impact through energy efficiency, resource conservation, and harmony with the natural environment.",
-        image:
-            "https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        category: "Design",
-        tags: ["Architecture", "Sustainability", "Urban Design", "Eco-friendly"],
+            "Dentigo is a healthcare-focused application designed to digitise and optimise dental clinic operations, from patient management to appointment scheduling and treatment tracking.",
+        image: "/dentigo1.png",
+        category: "Health Tech",
+        tags: ["Healthcare", "Full-Stack", "Patient Management", "Digital Health"],
     },
     {
-        title: "Neuroscience of Creativity",
+        title: "Travel Buddy",
         description:
-            "New research reveals how the brain generates innovative ideas.",
+            "A smart travel companion app for planning and discovering destinations.",
         fullDescription:
-            "Scientists are uncovering the neural mechanisms behind creative thinking. Using advanced imaging techniques, researchers can observe how different brain regions collaborate during creative processes.",
-        image:
-            "https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        category: "Science",
-        tags: ["Neuroscience", "Creativity", "Brain", "Research"],
+            "Travel Buddy helps users plan trips, discover new destinations, and organise itineraries. The app combines intelligent recommendations with a seamless user experience for modern travellers.",
+        image: "/travel-buddy.png",
+        category: "Mobile / Web",
+        tags: ["Travel", "Mobile App", "Recommendations", "UX Design"],
     },
     {
-        title: "Autonomous Transportation",
+        title: "Snake Game",
         description:
-            "Self-driving vehicles are transforming how we think about mobility.",
+            "A classic snake game reimagined with modern graphics and gameplay.",
         fullDescription:
-            "Autonomous vehicles use a combination of sensors, cameras, radar, and artificial intelligence to navigate without human input. As this technology matures, it promises to reduce accidents and ease congestion.",
-        image:
-            "https://images.unsplash.com/photo-1562519819-016930ada31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        category: "Technology",
-        tags: ["Autonomous", "Transportation", "AI", "Future Mobility"],
+            "A modern take on the classic Snake game, featuring enhanced graphics, smooth animations, and engaging gameplay mechanics built with a focus on clean code and game development principles.",
+        image: "/snake1.png",
+        category: "Game Dev",
+        tags: ["Game Development", "Graphics", "Animation", "Interactive"],
     },
     {
-        title: "Deep Ocean Discoveries",
-        description: "Exploring the mysteries of Earth's final frontier.",
+        title: "Wio Terminal IoT",
+        description:
+            "IoT project using the Wio Terminal for sensor data collection and display.",
         fullDescription:
-            "The deep ocean remains one of the least explored regions on Earth. Recent expeditions have discovered new species, underwater geological features, and insights into how life adapts to extreme conditions.",
-        image:
-            "https://images.unsplash.com/photo-1551244072-5d12893278ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        category: "Environment",
-        tags: ["Oceanography", "Marine Biology", "Exploration", "Discovery"],
+            "An Internet of Things project leveraging the Wio Terminal platform for real-time sensor data acquisition, processing, and visualisation. Demonstrates embedded programming and hardware integration.",
+        image: "/WioTerminalSetupImage.jpg",
+        category: "IoT / Embedded",
+        tags: ["IoT", "Wio Terminal", "Sensors", "Arduino", "Embedded"],
+    },
+    {
+        title: "Analytics Reports",
+        description:
+            "Data analytics and reporting dashboard for business intelligence.",
+        fullDescription:
+            "A comprehensive data analytics and reporting solution that transforms raw data into actionable insights through interactive dashboards, automated report generation, and data visualisation.",
+        image: "/reports.png",
+        category: "Data Science",
+        tags: ["Data Analytics", "Reporting", "Dashboards", "Visualisation"],
+    },
+    {
+        title: "Random Generator",
+        description:
+            "A utility tool for generating randomised data and outputs.",
+        fullDescription:
+            "A versatile random generation tool designed for various use cases, from test data generation to creative applications. Built with a focus on true randomness and customisation options.",
+        image: "/random.png",
+        category: "Utility",
+        tags: ["Randomisation", "Utility", "Data Generation", "Tools"],
     },
 ];
-
 
 export default function ProjectsPage() {
     useEffect(() => {
@@ -93,7 +107,7 @@ export default function ProjectsPage() {
     return (
         <div className="dark min-h-screen bg-[#020202] selection:bg-white selection:text-black">
             <main className="relative w-full overflow-x-hidden">
-                <FloatingCardGallery cards={cardData} />
+                <FloatingCardGallery cards={cardData} maxCards={8} />
             </main>
         </div>
     );

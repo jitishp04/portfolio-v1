@@ -195,3 +195,28 @@
   animation: monolith-rotate 30s linear infinite;
   box-shadow: 0 0 120px 40px rgba(255, 255, 255, 0.02);
 }
+
+/* Scroll indicator animation */
+@keyframes scroll-line {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(300%);
+    opacity: 0;
+  }
+}
+
+.animate-scroll-line {
+  animation: scroll-line 2s ease-in-out infinite;
+}
