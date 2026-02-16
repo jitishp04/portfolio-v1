@@ -13,8 +13,6 @@ const cardData = [
             "Virtual Reality technology is revolutionizing industries from gaming to healthcare. By creating fully immersive digital environments, VR enables users to experience scenarios that would otherwise be impossible, dangerous, or prohibitively expensive in the real world.",
         image:
             "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-        author: "Sophia Chen",
         category: "Technology",
         tags: ["Virtual Reality", "Technology", "Innovation", "Digital Experience"],
     },
@@ -26,8 +24,6 @@ const cardData = [
             "Quantum computers leverage the strange properties of quantum mechanics to process information in ways that classical computers cannot. Recent breakthroughs have brought us closer to quantum supremacy.",
         image:
             "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-        author: "Robert Jiang",
         category: "Science",
         tags: ["Quantum", "Computing", "Research", "Future Tech"],
     },
@@ -39,8 +35,6 @@ const cardData = [
             "Sustainable architecture focuses on creating buildings that minimize environmental impact through energy efficiency, resource conservation, and harmony with the natural environment.",
         image:
             "https://images.unsplash.com/photo-1518005020951-eccb494ad742?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        avatar: "https://randomuser.me/api/portraits/women/65.jpg",
-        author: "Emma Rodriguez",
         category: "Design",
         tags: ["Architecture", "Sustainability", "Urban Design", "Eco-friendly"],
     },
@@ -52,8 +46,6 @@ const cardData = [
             "Scientists are uncovering the neural mechanisms behind creative thinking. Using advanced imaging techniques, researchers can observe how different brain regions collaborate during creative processes.",
         image:
             "https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        avatar: "https://randomuser.me/api/portraits/men/87.jpg",
-        author: "Marcus Taylor",
         category: "Science",
         tags: ["Neuroscience", "Creativity", "Brain", "Research"],
     },
@@ -65,8 +57,6 @@ const cardData = [
             "Autonomous vehicles use a combination of sensors, cameras, radar, and artificial intelligence to navigate without human input. As this technology matures, it promises to reduce accidents and ease congestion.",
         image:
             "https://images.unsplash.com/photo-1562519819-016930ada31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        avatar: "https://randomuser.me/api/portraits/women/23.jpg",
-        author: "Leila Johnson",
         category: "Technology",
         tags: ["Autonomous", "Transportation", "AI", "Future Mobility"],
     },
@@ -77,12 +67,11 @@ const cardData = [
             "The deep ocean remains one of the least explored regions on Earth. Recent expeditions have discovered new species, underwater geological features, and insights into how life adapts to extreme conditions.",
         image:
             "https://images.unsplash.com/photo-1551244072-5d12893278ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-        avatar: "https://randomuser.me/api/portraits/men/54.jpg",
-        author: "David Nakamura",
         category: "Environment",
         tags: ["Oceanography", "Marine Biology", "Exploration", "Discovery"],
     },
 ];
+
 
 export default function ProjectsPage() {
     useEffect(() => {

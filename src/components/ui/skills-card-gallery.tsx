@@ -3,25 +3,21 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
-interface CardData {
+interface SkillCardData {
     title: string;
     description: string;
-    fullDescription?: string;
-    image: string;
     category: string;
-    tags?: string[];
+    tags: string[];
 }
 
-interface FloatingCardGalleryProps {
-    cards?: CardData[];
-    maxCards?: number;
+interface SkillsCardGalleryProps {
+    cards?: SkillCardData[];
     title?: string;
 }
 
-const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
+const SkillsCardGallery: React.FC<SkillsCardGalleryProps> = ({
     cards = [],
-    maxCards = 6,
-    title = "PROJECTS",
+    title = "SKILLS",
 }) => {
     const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -45,8 +41,6 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
             setFlippedIndex(flippedIndex === index ? null : index);
         }
     };
-
-    const displayCards = cards.slice(0, maxCards);
 
     return (
         <div
@@ -119,7 +113,7 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                     transformStyle: "preserve-3d",
                 }}
             >
-                {displayCards.map((card, index) => {
+                {cards.map((card, index) => {
                     const isFlipped = flippedIndex === index;
 
                     return (
@@ -128,7 +122,7 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                             className="relative cursor-pointer"
                             style={{
                                 perspective: "1000px",
-                                minHeight: "360px",
+                                minHeight: "280px",
                             }}
                             onClick={() =>
                                 setFlippedIndex(isFlipped ? null : index)
@@ -153,46 +147,37 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                                     transform: isFlipped
                                         ? "rotateY(180deg)"
                                         : "rotateY(0deg)",
-                                    minHeight: "360px",
+                                    minHeight: "280px",
                                 }}
                             >
                                 {/* ═══ FRONT FACE ═══ */}
                                 <div
-                                    className="absolute inset-0 glass-panel rounded-xl p-6 flex flex-col group overflow-hidden"
+                                    className="absolute inset-0 glass-panel rounded-xl p-8 flex flex-col justify-between group"
                                     style={{
                                         backfaceVisibility: "hidden",
                                         WebkitBackfaceVisibility: "hidden",
-                                        boxShadow:
-                                            "0 25px 50px -12px rgba(0, 0, 0, 0.8)",
                                     }}
                                 >
                                     {/* Subtle gradient orb */}
                                     <div className="absolute -right-4 -top-4 w-24 h-24 rounded-full bg-white/[0.03] blur-xl" />
 
-                                    {/* Card image */}
-                                    <div className="w-full h-40 mb-4 overflow-hidden rounded-lg">
-                                        <img
-                                            src={card.image}
-                                            alt={card.title}
-                                            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                                        />
-                                    </div>
-
                                     {/* Category badge */}
-                                    <span className="text-[9px] font-mono font-bold px-3 py-1 rounded-full border border-white/10 text-white/50 uppercase tracking-widest w-fit mb-3">
+                                    <span className="text-[9px] font-mono font-bold px-3 py-1 rounded-full border border-white/10 text-white/50 uppercase tracking-widest w-fit">
                                         {card.category}
                                     </span>
 
                                     {/* Title + description */}
-                                    <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
-                                        {card.title}
-                                    </h3>
-                                    <p className="text-white/40 font-mono text-[11px] leading-relaxed line-clamp-2">
-                                        {card.description}
-                                    </p>
+                                    <div className="mt-6 flex-1">
+                                        <h3 className="text-xl font-bold text-white mb-3 tracking-tight">
+                                            {card.title}
+                                        </h3>
+                                        <p className="text-white/40 font-mono text-[11px] leading-relaxed">
+                                            {card.description}
+                                        </p>
+                                    </div>
 
                                     {/* Click hint */}
-                                    <div className="mt-auto pt-4 flex items-center gap-2 text-white/20 group-hover:text-white/50 transition-colors duration-500">
+                                    <div className="mt-6 flex items-center gap-2 text-white/20 group-hover:text-white/50 transition-colors duration-500">
                                         <svg
                                             width="14"
                                             height="14"
@@ -257,28 +242,21 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                                     </div>
 
                                     {/* Title */}
-                                    <h3 className="text-lg font-bold text-white mb-3 tracking-tight">
+                                    <h3 className="text-lg font-bold text-white mb-5 tracking-tight">
                                         {card.title}
                                     </h3>
 
-                                    {/* Full description */}
-                                    <p className="text-white/40 font-mono text-[11px] leading-relaxed mb-5">
-                                        {card.fullDescription || card.description}
-                                    </p>
-
                                     {/* Tag bubbles */}
-                                    {card.tags && (
-                                        <div className="flex flex-wrap gap-2">
-                                            {card.tags.map((tag, i) => (
-                                                <span
-                                                    key={i}
-                                                    className="text-[10px] font-mono px-4 py-2 rounded-full border border-white/10 text-white/70 bg-white/[0.04] hover:bg-white/[0.1] hover:border-white/25 hover:text-white transition-all duration-300 cursor-default"
-                                                >
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    )}
+                                    <div className="flex flex-wrap gap-2">
+                                        {card.tags.map((tag, i) => (
+                                            <span
+                                                key={i}
+                                                className="text-[10px] font-mono px-4 py-2 rounded-full border border-white/10 text-white/70 bg-white/[0.04] hover:bg-white/[0.1] hover:border-white/25 hover:text-white transition-all duration-300 cursor-default"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
@@ -289,4 +267,4 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
     );
 };
 
-export default FloatingCardGallery;
+export default SkillsCardGallery;

@@ -97,8 +97,7 @@ export const Component = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const revealRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLAnchorElement>(null);
-  const skillsRef = useRef<HTMLButtonElement>(null);
-  const expRef = useRef<HTMLButtonElement>(null);
+  const skillsRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -132,7 +131,6 @@ export const Component = () => {
       const handleMouseMove = (e: MouseEvent) => {
         applyMagnetic(e, projectsRef.current);
         applyMagnetic(e, skillsRef.current);
-        applyMagnetic(e, expRef.current);
       };
 
       window.addEventListener("mousemove", handleMouseMove);
@@ -186,29 +184,14 @@ export const Component = () => {
               <span className="font-mono text-[10px] font-bold text-white uppercase tracking-[0.2em]">Projects</span>
             </Link>
 
-            <a
-              ref={skillsRef as any}
-              href="https://github.com/jitishp04/CV/blob/main/CV%20-%20Google%20Docs.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-fit flex items-center gap-4 group"
-            >
+            <Link ref={skillsRef} href="/skills" className="w-fit flex items-center gap-4 group">
               <div className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-white transition-all duration-500 overflow-hidden">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:stroke-black stroke-white transition-colors duration-500">
                   <path d="M7 17L17 7M17 7H8M17 7V16" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <span className="font-mono text-[10px] font-bold text-white uppercase tracking-[0.2em]">CV</span>
-            </a>
-
-            <button ref={expRef} className="w-fit flex items-center gap-4 group">
-              <div className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-white transition-all duration-500 overflow-hidden">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:stroke-black stroke-white transition-colors duration-500">
-                  <path d="M7 17L17 7M17 7H8M17 7V16" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <span className="font-mono text-[10px] font-bold text-white uppercase tracking-[0.2em]">Experiences</span>
-            </button>
+              <span className="font-mono text-[10px] font-bold text-white uppercase tracking-[0.2em]">Skills</span>
+            </Link>
           </div>
         </div>
 
@@ -263,8 +246,8 @@ export const Component = () => {
               </div>
               <div className="w-[1px] bg-white/5" />
               <div>
-                <span className="text-2xl font-bold text-white tracking-tighter">2</span>
-                <span className="block font-mono text-[9px] text-white/25 uppercase tracking-widest mt-1">Internships</span>
+                <span className="text-2xl font-bold text-white tracking-tighter">&sim; 1 </span>
+                <span className="block font-mono text-[9px] text-white/25 uppercase tracking-widest mt-1">Year of experience</span>
               </div>
               <div className="w-[1px] bg-white/5" />
               <div>
