@@ -53,8 +53,8 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
     return (
         <div
             ref={containerRef}
-            className="relative min-h-screen w-full overflow-hidden bg-[#020202] flex items-center justify-center p-8"
-            style={{ perspective: "1500px" }}
+            className="relative min-h-screen w-full overflow-hidden flex items-center justify-center p-8"
+            style={{ perspective: "1500px", backgroundColor: 'var(--portfolio-surface)' }}
         >
             {/* Ambient floating particles — deterministic to avoid SSR hydration mismatch */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -66,8 +66,9 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                     return (
                         <div
                             key={i}
-                            className="absolute rounded-full bg-white opacity-[0.04]"
+                            className="absolute rounded-full opacity-[0.04]"
                             style={{
+                                backgroundColor: 'var(--portfolio-particle)',
                                 width: `${seed(0) * 4 + 1}px`,
                                 height: `${seed(1) * 4 + 1}px`,
                                 top: `${seed(2) * 100}%`,
@@ -88,14 +89,15 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                 href="/"
                 className="fixed top-8 left-8 z-50 flex items-center gap-3 group"
             >
-                <div className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-white transition-all duration-500">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500" style={{ border: '1px solid var(--portfolio-border)' }}>
                     <svg
                         width="14"
                         height="14"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="group-hover:stroke-black stroke-white transition-colors duration-500"
+                        className="transition-colors duration-500"
+                        style={{ stroke: 'var(--portfolio-text)' }}
                     >
                         <path
                             d="M19 12H5M5 12L12 19M5 12L12 5"
@@ -105,17 +107,17 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                         />
                     </svg>
                 </div>
-                <span className="font-mono text-[11px] font-bold text-white uppercase tracking-[0.2em]">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--portfolio-text)' }}>
                     Back
                 </span>
             </a>
 
             {/* Page header */}
             <div className="fixed top-8 right-8 z-50 flex items-center gap-3">
-                <div className="relative w-2.5 h-2.5 bg-white rounded-full">
-                    <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-30" />
+                <div className="relative w-2.5 h-2.5 rounded-full" style={{ backgroundColor: 'var(--portfolio-text)' }}>
+                    <div className="absolute inset-0 rounded-full animate-ping opacity-30" style={{ backgroundColor: 'var(--portfolio-text)' }} />
                 </div>
-                <span className="font-mono text-[11px] font-bold text-white tracking-[0.2em] uppercase">
+                <span className="font-mono text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: 'var(--portfolio-text)' }}>
                     {title}
                 </span>
             </div>
@@ -171,11 +173,11 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                                         backfaceVisibility: "hidden",
                                         WebkitBackfaceVisibility: "hidden",
                                         boxShadow:
-                                            "0 25px 50px -12px rgba(0, 0, 0, 0.8)",
+                                            "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                                     }}
                                 >
                                     {/* Subtle gradient orb */}
-                                    <div className="absolute -right-4 -top-4 w-24 h-24 rounded-full bg-white/[0.03] blur-xl" />
+                                    <div className="absolute -right-4 -top-4 w-24 h-24 rounded-full blur-xl" style={{ backgroundColor: 'var(--portfolio-orb)' }} />
 
                                     {/* Card image */}
                                     <div className="w-full h-40 mb-4 overflow-hidden rounded-lg">
@@ -187,20 +189,20 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                                     </div>
 
                                     {/* Category badge */}
-                                    <span className="text-[9px] font-mono font-bold px-3 py-1 rounded-full border border-white/10 text-white/50 uppercase tracking-widest w-fit mb-3">
+                                    <span className="text-[9px] font-mono font-bold px-3 py-1 rounded-full uppercase tracking-widest w-fit mb-3" style={{ border: '1px solid var(--portfolio-border)', color: 'var(--portfolio-text-secondary)' }}>
                                         {card.category}
                                     </span>
 
                                     {/* Title + description */}
-                                    <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
+                                    <h3 className="text-xl font-bold mb-2 tracking-tight" style={{ color: 'var(--portfolio-text)' }}>
                                         {card.title}
                                     </h3>
-                                    <p className="text-white/40 font-mono text-[11px] leading-relaxed line-clamp-2">
+                                    <p className="font-mono text-[11px] leading-relaxed line-clamp-2" style={{ color: 'var(--portfolio-text-muted)' }}>
                                         {card.description}
                                     </p>
 
                                     {/* Click hint */}
-                                    <div className="mt-auto pt-4 flex items-center gap-2 text-white/20 group-hover:text-white/50 transition-colors duration-500">
+                                    <div className="mt-auto pt-4 flex items-center gap-2 transition-colors duration-500" style={{ color: 'var(--portfolio-text-faint)' }}>
                                         <svg
                                             width="14"
                                             height="14"
@@ -229,13 +231,13 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                                         backfaceVisibility: "hidden",
                                         WebkitBackfaceVisibility: "hidden",
                                         transform: "rotateY(180deg)",
-                                        background: "rgba(2, 2, 2, 0.95)",
+                                        background: 'var(--portfolio-card-back)',
                                         backdropFilter: "blur(20px)",
                                     }}
                                 >
                                     {/* Header */}
                                     <div className="flex items-center justify-between mb-6">
-                                        <span className="text-[9px] font-mono font-bold px-3 py-1 rounded-full border border-white/10 text-white/50 uppercase tracking-widest">
+                                        <span className="text-[9px] font-mono font-bold px-3 py-1 rounded-full uppercase tracking-widest" style={{ border: '1px solid var(--portfolio-border)', color: 'var(--portfolio-text-secondary)' }}>
                                             {card.category}
                                         </span>
                                         <button
@@ -243,7 +245,8 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                                                 e.stopPropagation();
                                                 setFlippedIndex(null);
                                             }}
-                                            className="text-white/30 hover:text-white transition-colors"
+                                            className="transition-colors"
+                                            style={{ color: 'var(--portfolio-text-muted)' }}
                                             aria-label="Close"
                                         >
                                             <svg
@@ -265,12 +268,12 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                                     </div>
 
                                     {/* Title */}
-                                    <h3 className="text-lg font-bold text-white mb-3 tracking-tight">
+                                    <h3 className="text-lg font-bold mb-3 tracking-tight" style={{ color: 'var(--portfolio-text)' }}>
                                         {card.title}
                                     </h3>
 
                                     {/* Full description */}
-                                    <p className="text-white/40 font-mono text-[11px] leading-relaxed mb-5">
+                                    <p className="font-mono text-[11px] leading-relaxed mb-5" style={{ color: 'var(--portfolio-text-muted)' }}>
                                         {card.fullDescription || card.description}
                                     </p>
 
@@ -280,7 +283,12 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                                             {card.tags.map((tag, i) => (
                                                 <span
                                                     key={i}
-                                                    className="text-[10px] font-mono px-4 py-2 rounded-full border border-white/10 text-white/70 bg-white/[0.04] hover:bg-white/[0.1] hover:border-white/25 hover:text-white transition-all duration-300 cursor-default"
+                                                    className="text-[10px] font-mono px-4 py-2 rounded-full transition-all duration-300 cursor-default"
+                                                    style={{
+                                                        border: '1px solid var(--portfolio-border)',
+                                                        color: 'var(--portfolio-text-secondary)',
+                                                        backgroundColor: 'var(--portfolio-tag-bg)',
+                                                    }}
                                                 >
                                                     {tag}
                                                 </span>
@@ -297,7 +305,7 @@ const FloatingCardGallery: React.FC<FloatingCardGalleryProps> = ({
                                             onClick={(e) => e.stopPropagation()}
                                             className="mt-auto pt-4 flex items-center gap-2 group/gh w-fit"
                                         >
-                                            <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 text-white/50 hover:text-white hover:border-white/40 hover:bg-white/[0.06] transition-all duration-300">
+                                            <div className="flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300" style={{ border: '1px solid var(--portfolio-border)', color: 'var(--portfolio-text-secondary)' }}>
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     width="14"

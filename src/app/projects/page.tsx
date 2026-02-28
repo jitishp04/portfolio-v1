@@ -137,7 +137,7 @@ export default function ProjectsPage() {
     }, []);
 
     return (
-        <div className="dark min-h-screen bg-[#020202] selection:bg-white selection:text-black">
+        <div className="min-h-screen selection:bg-[var(--portfolio-selection-bg)] selection:text-[var(--portfolio-selection-text)]" style={{ backgroundColor: 'var(--portfolio-surface)' }}>
             <main className="relative w-full overflow-x-hidden">
                 <FloatingCardGallery cards={cardData} maxCards={9} />
             </main>

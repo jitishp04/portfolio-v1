@@ -46,25 +46,32 @@ const SkillsCardGallery: React.FC<SkillsCardGalleryProps> = ({
     return (
         <div
             ref={containerRef}
-            className="relative min-h-screen w-full overflow-hidden bg-[#020202] flex items-center justify-center p-8"
-            style={{ perspective: "1500px" }}
+            className="relative min-h-screen w-full overflow-hidden flex items-center justify-center p-8"
+            style={{ perspective: "1500px", backgroundColor: 'var(--portfolio-surface)' }}
         >
-            {/* Ambient floating particles */}
+            {/* Ambient floating particles — deterministic to avoid SSR hydration mismatch */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(20)].map((_, i) => (
-                    <div
-                        key={i}
-                        className="absolute rounded-full bg-white opacity-[0.04]"
-                        style={{
-                            width: `${Math.random() * 4 + 1}px`,
-                            height: `${Math.random() * 4 + 1}px`,
-                            top: `${Math.random() * 100}%`,
-                            left: `${Math.random() * 100}%`,
-                            animation: `float ${Math.random() * 10 + 20}s linear infinite`,
-                            animationDelay: `${Math.random() * 20}s`,
-                        }}
-                    />
-                ))}
+                {[...Array(20)].map((_, i) => {
+                    const seed = (n: number) => {
+                        const x = Math.sin(i * 127.1 + n * 311.7) * 43758.5453;
+                        return x - Math.floor(x);
+                    };
+                    return (
+                        <div
+                            key={i}
+                            className="absolute rounded-full opacity-[0.04]"
+                            style={{
+                                backgroundColor: 'var(--portfolio-particle)',
+                                width: `${seed(0) * 4 + 1}px`,
+                                height: `${seed(1) * 4 + 1}px`,
+                                top: `${seed(2) * 100}%`,
+                                left: `${seed(3) * 100}%`,
+                                animation: `float ${seed(4) * 10 + 20}s linear infinite`,
+                                animationDelay: `${seed(5) * 20}s`,
+                            }}
+                        />
+                    );
+                })}
             </div>
 
             {/* Bento mask overlay */}
@@ -75,14 +82,15 @@ const SkillsCardGallery: React.FC<SkillsCardGalleryProps> = ({
                 href="/"
                 className="fixed top-8 left-8 z-50 flex items-center gap-3 group"
             >
-                <div className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center group-hover:bg-white transition-all duration-500">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500" style={{ border: '1px solid var(--portfolio-border)' }}>
                     <svg
                         width="14"
                         height="14"
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="group-hover:stroke-black stroke-white transition-colors duration-500"
+                        className="transition-colors duration-500"
+                        style={{ stroke: 'var(--portfolio-text)' }}
                     >
                         <path
                             d="M19 12H5M5 12L12 19M5 12L12 5"
@@ -92,17 +100,17 @@ const SkillsCardGallery: React.FC<SkillsCardGalleryProps> = ({
                         />
                     </svg>
                 </div>
-                <span className="font-mono text-[11px] font-bold text-white uppercase tracking-[0.2em]">
+                <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--portfolio-text)' }}>
                     Back
                 </span>
             </a>
 
             {/* Page header */}
             <div className="fixed top-8 right-8 z-50 flex items-center gap-3">
-                <div className="relative w-2.5 h-2.5 bg-white rounded-full">
-                    <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-30" />
+                <div className="relative w-2.5 h-2.5 rounded-full" style={{ backgroundColor: 'var(--portfolio-text)' }}>
+                    <div className="absolute inset-0 rounded-full animate-ping opacity-30" style={{ backgroundColor: 'var(--portfolio-text)' }} />
                 </div>
-                <span className="font-mono text-[11px] font-bold text-white tracking-[0.2em] uppercase">
+                <span className="font-mono text-[11px] font-bold tracking-[0.2em] uppercase" style={{ color: 'var(--portfolio-text)' }}>
                     {title}
                 </span>
             </div>
@@ -160,25 +168,25 @@ const SkillsCardGallery: React.FC<SkillsCardGalleryProps> = ({
                                     }}
                                 >
                                     {/* Subtle gradient orb */}
-                                    <div className="absolute -right-4 -top-4 w-24 h-24 rounded-full bg-white/[0.03] blur-xl" />
+                                    <div className="absolute -right-4 -top-4 w-24 h-24 rounded-full blur-xl" style={{ backgroundColor: 'var(--portfolio-orb)' }} />
 
                                     {/* Category badge */}
-                                    <span className="text-[9px] font-mono font-bold px-3 py-1 rounded-full border border-white/10 text-white/50 uppercase tracking-widest w-fit">
+                                    <span className="text-[9px] font-mono font-bold px-3 py-1 rounded-full uppercase tracking-widest w-fit" style={{ border: '1px solid var(--portfolio-border)', color: 'var(--portfolio-text-secondary)' }}>
                                         {card.category}
                                     </span>
 
                                     {/* Title + description */}
                                     <div className="mt-6 flex-1">
-                                        <h3 className="text-xl font-bold text-white mb-3 tracking-tight">
+                                        <h3 className="text-xl font-bold mb-3 tracking-tight" style={{ color: 'var(--portfolio-text)' }}>
                                             {card.title}
                                         </h3>
-                                        <p className="text-white/40 font-mono text-[11px] leading-relaxed">
+                                        <p className="font-mono text-[11px] leading-relaxed" style={{ color: 'var(--portfolio-text-muted)' }}>
                                             {card.description}
                                         </p>
                                     </div>
 
                                     {/* Click hint */}
-                                    <div className="mt-6 flex items-center gap-2 text-white/20 group-hover:text-white/50 transition-colors duration-500">
+                                    <div className="mt-6 flex items-center gap-2 transition-colors duration-500" style={{ color: 'var(--portfolio-text-faint)' }}>
                                         <svg
                                             width="14"
                                             height="14"
@@ -207,13 +215,13 @@ const SkillsCardGallery: React.FC<SkillsCardGalleryProps> = ({
                                         backfaceVisibility: "hidden",
                                         WebkitBackfaceVisibility: "hidden",
                                         transform: "rotateY(180deg)",
-                                        background: "rgba(2, 2, 2, 0.95)",
+                                        background: 'var(--portfolio-card-back)',
                                         backdropFilter: "blur(20px)",
                                     }}
                                 >
                                     {/* Header */}
                                     <div className="flex items-center justify-between mb-6">
-                                        <span className="text-[9px] font-mono font-bold px-3 py-1 rounded-full border border-white/10 text-white/50 uppercase tracking-widest">
+                                        <span className="text-[9px] font-mono font-bold px-3 py-1 rounded-full uppercase tracking-widest" style={{ border: '1px solid var(--portfolio-border)', color: 'var(--portfolio-text-secondary)' }}>
                                             {card.category}
                                         </span>
                                         <button
@@ -221,7 +229,8 @@ const SkillsCardGallery: React.FC<SkillsCardGalleryProps> = ({
                                                 e.stopPropagation();
                                                 setFlippedIndex(null);
                                             }}
-                                            className="text-white/30 hover:text-white transition-colors"
+                                            className="transition-colors"
+                                            style={{ color: 'var(--portfolio-text-muted)' }}
                                             aria-label="Close"
                                         >
                                             <svg
@@ -243,7 +252,7 @@ const SkillsCardGallery: React.FC<SkillsCardGalleryProps> = ({
                                     </div>
 
                                     {/* Title */}
-                                    <h3 className="text-lg font-bold text-white mb-5 tracking-tight">
+                                    <h3 className="text-lg font-bold mb-5 tracking-tight" style={{ color: 'var(--portfolio-text)' }}>
                                         {card.title}
                                     </h3>
 
@@ -252,7 +261,12 @@ const SkillsCardGallery: React.FC<SkillsCardGalleryProps> = ({
                                         {card.tags.map((tag, i) => (
                                             <span
                                                 key={i}
-                                                className="text-[10px] font-mono px-4 py-2 rounded-full border border-white/10 text-white/70 bg-white/[0.04] hover:bg-white/[0.1] hover:border-white/25 hover:text-white transition-all duration-300 cursor-default"
+                                                className="text-[10px] font-mono px-4 py-2 rounded-full transition-all duration-300 cursor-default"
+                                                style={{
+                                                    border: '1px solid var(--portfolio-border)',
+                                                    color: 'var(--portfolio-text-secondary)',
+                                                    backgroundColor: 'var(--portfolio-tag-bg)',
+                                                }}
                                             >
                                                 {tag}
                                             </span>

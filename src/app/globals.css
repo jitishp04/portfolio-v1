@@ -80,6 +80,27 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Portfolio theme tokens — light */
+  --portfolio-surface: #f5f5f5;
+  --portfolio-text: #1a1a1a;
+  --portfolio-text-secondary: rgba(0, 0, 0, 0.5);
+  --portfolio-text-muted: rgba(0, 0, 0, 0.3);
+  --portfolio-text-faint: rgba(0, 0, 0, 0.15);
+  --portfolio-border: rgba(0, 0, 0, 0.1);
+  --portfolio-border-hover: rgba(0, 0, 0, 0.25);
+  --portfolio-glass-bg: rgba(255, 255, 255, 0.6);
+  --portfolio-glass-border: rgba(0, 0, 0, 0.08);
+  --portfolio-card-back: rgba(245, 245, 245, 0.97);
+  --portfolio-orb: rgba(0, 0, 0, 0.03);
+  --portfolio-particle: #000;
+  --portfolio-bento-line: rgba(0, 0, 0, 0.04);
+  --portfolio-outline-stroke: rgba(0, 0, 0, 0.4);
+  --portfolio-divider: rgba(0, 0, 0, 0.08);
+  --portfolio-tag-bg: rgba(0, 0, 0, 0.04);
+  --portfolio-tag-bg-hover: rgba(0, 0, 0, 0.1);
+  --portfolio-selection-bg: #1a1a1a;
+  --portfolio-selection-text: #fff;
 }
 
 .dark {
@@ -114,6 +135,27 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* Portfolio theme tokens — dark */
+  --portfolio-surface: #020202;
+  --portfolio-text: #ffffff;
+  --portfolio-text-secondary: rgba(255, 255, 255, 0.5);
+  --portfolio-text-muted: rgba(255, 255, 255, 0.3);
+  --portfolio-text-faint: rgba(255, 255, 255, 0.15);
+  --portfolio-border: rgba(255, 255, 255, 0.1);
+  --portfolio-border-hover: rgba(255, 255, 255, 0.25);
+  --portfolio-glass-bg: rgba(255, 255, 255, 0.02);
+  --portfolio-glass-border: rgba(255, 255, 255, 0.05);
+  --portfolio-card-back: rgba(2, 2, 2, 0.95);
+  --portfolio-orb: rgba(255, 255, 255, 0.03);
+  --portfolio-particle: #fff;
+  --portfolio-bento-line: rgba(255, 255, 255, 0.03);
+  --portfolio-outline-stroke: rgba(255, 255, 255, 0.5);
+  --portfolio-divider: rgba(255, 255, 255, 0.05);
+  --portfolio-tag-bg: rgba(255, 255, 255, 0.04);
+  --portfolio-tag-bg-hover: rgba(255, 255, 255, 0.1);
+  --portfolio-selection-bg: #fff;
+  --portfolio-selection-text: #000;
 }
 
 @layer base {
@@ -139,21 +181,21 @@
 
 /* Experience Hero — Utility Classes */
 .text-outline {
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.5);
+  -webkit-text-stroke: 1.5px var(--portfolio-outline-stroke);
   color: transparent;
 }
 
 .glass-panel {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--portfolio-glass-bg);
+  border: 1px solid var(--portfolio-glass-border);
   border-radius: 12px;
   backdrop-filter: blur(12px);
 }
 
 .bento-mask {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(var(--portfolio-bento-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--portfolio-bento-line) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -189,11 +231,11 @@
   height: 340px;
   clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
   background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.04) 0%,
-      rgba(255, 255, 255, 0.01) 50%,
-      rgba(255, 255, 255, 0.06) 100%);
+      rgba(128, 128, 128, 0.08) 0%,
+      rgba(128, 128, 128, 0.02) 50%,
+      rgba(128, 128, 128, 0.1) 100%);
   animation: monolith-rotate 30s linear infinite;
-  box-shadow: 0 0 120px 40px rgba(255, 255, 255, 0.02);
+  box-shadow: 0 0 120px 40px rgba(128, 128, 128, 0.04);
 }
 
 /* Scroll indicator animation */
