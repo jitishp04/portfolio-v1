@@ -8,114 +8,114 @@ const cardData = [
     {
         title: "CyberSafe AI",
         description:
-            "An AI-powered cybersecurity solution for threat detection and prevention.",
+            "An AI-powered web application for identifying and flagging toxic content.",
         fullDescription:
-            "CyberSafe AI leverages machine learning and artificial intelligence to identify, analyse, and mitigate cybersecurity threats in real time. The system provides proactive defence mechanisms across digital infrastructure.",
+            "CyberSafeAI is a web application designed to combat the rising cyber crime linked to social media use by identifying and flagging toxic text. Users can upload messages, tweets, or other text for toxicity analysis.",
         image: "/cyberSafeAi.png",
-        category: "AI / Security",
-        tags: ["AI", "Cybersecurity", "Machine Learning", "Threat Detection"],
-        githubUrl: "https://github.com/placeholder/cybersafe-ai",
+        category: "AI and ML Systems Development",
+        tags: ["Django", "BERT LLM", "Docker", "Kubernetes", "GCP", "SQLite", "Gitlab CI/CD"],
+        githubUrl: "https://github.com/jitishp04/CyberSafeAI",
     },
     {
-        title: "Autonomous Vehicle",
+        title: "Steering Wheel Algorithm",
         description:
-            "Self-driving vehicle system built on embedded platforms and computer vision.",
+            "Cyber-physical system with OpenDLV for data extraction and processing.",
         fullDescription:
-            "An autonomous driving project utilising computer vision, sensor fusion, and embedded systems to enable real-time navigation and obstacle avoidance for self-driving vehicles.",
+            "Engineering a real-time algorithm for adjusting car steering based on image recognition, sensor data, and angular velocity, integrating OpenDLV for data extraction and processing.",
         image: "/car.png",
-        category: "Embedded / AI",
+        category: "Miniature car data extraction",
         tags: [
-            "Autonomous Driving",
-            "Computer Vision",
+            "CMake",
+            "Docker",
             "OpenDLV",
-            "Embedded Systems",
         ],
-        githubUrl: "https://github.com/placeholder/autonomous-vehicle",
+        githubUrl: "https://github.com/jitishp04/steering-wheel-algorithm",
     },
     {
-        title: "Financial Dashboard",
+        title: "Financial Data Pipeline",
         description:
             "Real-time technical analysis dashboard for financial market data.",
         fullDescription:
-            "Engineered a financial data pipeline using Pandas and NumPy, processing technical indicators for 10-15 tickers in under 600ms. Deployed an interactive dashboard using Streamlit and Plotly to provide indicators like RSI, SMA, and Cross detection for US equities.",
+            "Financial data pipeline processing technical indicators for 10-15 tickers in under 600ms. Deployed an interactive dashboard using Streamlit and Plotly to provide indicators like RSI, SMA, and Cross detection for US equities.",
         image: "/finance.jpg",
         category: "Financial Data Science",
         tags: [
-            "Python",
             "Streamlit",
             "Plotly",
             "Pandas",
             "Yahoo Finance API",
             "NumPy",
-            "Git",
         ],
-        githubUrl: "https://github.com/placeholder/financial-dashboard",
+        githubUrl: "https://github.com/jitishp04/Automated_TA_financial_portfolio_dashboard",
     },
     {
         title: "Dentigo",
         description:
             "A digital health application streamlining dental clinic workflows.",
         fullDescription:
-            "Dentigo is a healthcare-focused application designed to digitise and optimise dental clinic operations, from patient management to appointment scheduling and treatment tracking.",
+            "The system provides a web-based GUI that allows users to search for available appointments, view them on an interactive map, and book or cancel appointments.",
         image: "/dentigo1.png",
-        category: "Health Tech",
-        tags: ["Healthcare", "Full-Stack", "Patient Management", "Digital Health"],
-        githubUrl: "https://github.com/placeholder/dentigo",
+        category: "Microservices-Distributed Systems Development",
+        tags: ["MQTT", "Node.js", "Docker", "PostgreSQL", "Gitlab CI/CD", "Vue.js", "Tailwind CSS"],
+        githubUrl: "https://github.com/jitishp04/DENTIGO",
     },
     {
         title: "Travel Buddy",
         description:
             "A smart travel companion app for planning and discovering destinations.",
         fullDescription:
-            "Travel Buddy helps users plan trips, discover new destinations, and organise itineraries. The app combines intelligent recommendations with a seamless user experience for modern travellers.",
+            "A full-stack travel web-app, which allows you to search places to visit in the area using Google Maps API, create journals, and checklists.",
         image: "/travel-buddy.png",
-        category: "Mobile / Web",
-        tags: ["Travel", "Mobile App", "Recommendations", "UX Design"],
-        githubUrl: "https://github.com/placeholder/travel-buddy",
+        category: "Web development",
+        tags: ["ExpressJS", "Node.js", "MongoDB", "Google Maps API", "Postman", "Vue.js"],
+        githubUrl: "https://github.com/jitishp04/Travel-Buddy",
     },
     {
         title: "Wio Terminal IoT",
         description:
-            "IoT project using the Wio Terminal for sensor data collection and display.",
+            "IoT project using the Wio Terminal for sensor data collection and display connected with an android app.",
         fullDescription:
-            "An Internet of Things project leveraging the Wio Terminal platform for real-time sensor data acquisition, processing, and visualisation. Demonstrates embedded programming and hardware integration.",
+            "HOME4U is a smart home system that provides users with the experience of monitoring home security from a distance and enjoying smart control of their home through devices.",
         image: "/WioTerminalSetupImage.jpg",
-        category: "IoT / Embedded",
-        tags: ["IoT", "Wio Terminal", "Sensors", "Arduino", "Embedded"],
+        category: "Arduino and Android",
+        tags: ["Figma", "Android Studio", "MQTT", "Arduino", "Node.js", "Docker", "Gradle", "SQLite"],
         githubUrl: "https://github.com/placeholder/wio-terminal-iot",
     },
-    {
-        title: "Random Generator",
-        description:
-            "A utility tool for generating randomised data and outputs.",
-        fullDescription:
-            "A versatile random generation tool designed for various use cases, from test data generation to creative applications. Built with a focus on true randomness and customisation options.",
-        image: "/random.png",
-        category: "Utility",
-        tags: ["Randomisation", "Utility", "Data Generation", "Tools"],
-        githubUrl: "https://github.com/placeholder/random-generator",
-    },
+
     {
         title: "Snake Game",
         description:
             "A classic snake game reimagined with modern graphics and gameplay.",
         fullDescription:
-            "A modern take on the classic Snake game, featuring enhanced graphics, smooth animations, and engaging gameplay mechanics built with a focus on clean code and game development principles.",
+            "Snake game with a GUI, music, leaderboard features, made for proffesionals to beginners to be able to toggle speed of the snake.",
         image: "/snake1.png",
-        category: "Game Dev",
-        tags: ["Game Development", "Graphics", "Animation", "Interactive"],
+        category: "Java and JavaFx project",
+        tags: ["JavaFx", "Maven"],
         githubUrl: "https://github.com/placeholder/snake-game",
     },
     {
-        title: "Analytics Reports",
+        title: "Reports and Research Papers",
         description:
-            "Data analytics and reporting dashboard for business intelligence.",
-        fullDescription:
-            "A comprehensive data analytics and reporting solution that transforms raw data into actionable insights through interactive dashboards, automated report generation, and data visualisation.",
+            "Reports and research papers",
         image: "/reports.png",
-        category: "Data Science",
-        tags: ["Data Analytics", "Reporting", "Dashboards", "Visualisation"],
-        githubUrl: "https://github.com/placeholder/analytics-reports",
+        category: "Reports and Research Papers",
+        linkButtons: [
+            { label: "bachelor thesis", url: "https://github.com/jitishp04/Research-Papers/blob/main/Final%20Thesis(merged).docx%20(1).pdf" },
+            { label: "Change Management Report", url: "https://github.com/jitishp04/Research-Papers/blob/main/ChangeManagement.pdf" },
+            { label: "Software Development Methodologies", url: "https://github.com/jitishp04/Research-Papers/blob/main/SoftwareDevelopmentMethodologies.pdf" },
+        ],
+    },
+    {
+        title: "Other Coding Works",
+        description:
+            "Coding labs and other coding works",
+        image: "/random.png",
+        category: "Other Coding Works",
+        linkButtons: [
+            { label: "AI-systems Labs", url: "https://github.com/jitishp04/Software-Engineering-for-AI-Systems" },
+            { label: "Arduino and C labs", url: "https://github.com/jitishp04/Embedded-Systems-Arduino-C-" },
+            { label: "Software Architecture Labs", url: "https://github.com/jitishp04/Software-Architecture-Assignment" },
+        ],
     },
 ];
 
